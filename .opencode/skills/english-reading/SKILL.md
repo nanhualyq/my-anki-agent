@@ -1,15 +1,15 @@
 ---
 name: english-reading
-description: Generate topic-based English reading passages at 3500-word level and add unknown words to Anki
+description: Generate topic-based English reading passages at 4000-word level and add unknown words to Anki
 compatibility: opencode
 metadata:
   audience: learner
-  vocabulary_level: 3500
+  vocabulary_level: 4000
 ---
 
 ## Overview
 
-This skill helps you improve English reading at a 3500-word vocabulary level.
+This skill helps you improve English reading at a 4000-word vocabulary level.
 
 ## Defaults
 
@@ -27,7 +27,7 @@ The `<br>` tag separates the translation from the parsing notes so they display 
 ## Workflow
 
 1. You request a topic — I first search the web for the latest news and information
-2. Based on the search results, I generate a ~300-400 word passage at 3500-word level (ensuring timeliness)
+2. Based on the search results, I generate a ~300-400 word passage at 4000-word level (ensuring timeliness)
 3. You read and mark unfamiliar words/phrases
 4. I add those words to your Anki deck via AnkiConnect
 
