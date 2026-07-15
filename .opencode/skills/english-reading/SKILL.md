@@ -1,15 +1,15 @@
 ---
 name: english-reading
-description: Generate topic-based English reading passages at 4000-word level and add unknown words to Anki
+description: Generate topic-based English reading passages at 5000-word level and add unknown words to Anki
 compatibility: opencode
 metadata:
   audience: learner
-  vocabulary_level: 4000
+  vocabulary_level: 5000
 ---
 
 ## Overview
 
-This skill helps you improve English reading at a 4000-word vocabulary level.
+This skill helps you improve English reading at a 5000-word vocabulary level.
 
 ## Defaults
 
@@ -27,14 +27,14 @@ The `<br>` tag separates the translation from the parsing notes so they display 
 ## Workflow
 
 1. You request a topic — I first search the web for the latest news and information
-2. Based on the search results, I generate a ~300-400 word passage at 4000-word level (ensuring timeliness)
+2. Based on the search results, I generate a passage at 5000-word level (ensuring timeliness). No length limit unless explicitly specified.
 3. You read and mark unfamiliar words/phrases
 4. I add those words to your Anki deck via AnkiConnect
 
 ## Usage
 
 ### Step 1: Request a passage
-I'll first search the web for the latest information on your topic, then write a passage based on real, up-to-date sources and save it to a `.md` file so you can easily open it and bold unfamiliar words.
+I'll first search the web for the latest information on your topic, then write a passage based on real, up-to-date sources and save it to `/home/lyq/Sync/Obsidian/Main/` so you can easily open it and bold unfamiliar words.
 
 > "写一篇关于 [topic] 的英语文章"
 
@@ -46,6 +46,15 @@ Tell me which words or sentences to add. I'll create Anki cards (`en-read` deck,
 
 - **Front:** English word/sentence
 - **Back:** Chinese translation `<br>` grammar & vocabulary parsing notes
+
+## Obsidian Integration
+
+When the user provides an Obsidian markdown file (under `/home/lyq/Sync/Obsidian/Main/`), extract all text wrapped in `[[ ]]` brackets and add each as an Anki card:
+
+- **Front:** The text inside `[[ ]]` (English word/phrase/sentence)
+- **Back:** Chinese translation `<br>` grammar & vocabulary parsing notes
+
+Process every `[[...]]` occurrence in the file. If there are multiple, add them all.
 
 ## Script: add_to_anki.py
 
